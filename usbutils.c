@@ -3100,6 +3100,7 @@ void usb_initialise(void)
 		// Comma list of DRV:limit
 		} else {
 			fre = ptr = strdup(opt_usb_select);
+			applog(LOG_WARNING, "strdup=%c",*fre);
 			do {
 				comma = strchr(ptr, ',');
 				if (comma)
