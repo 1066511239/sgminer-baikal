@@ -3050,7 +3050,15 @@ void usb_initialise(void)
 	applog(LOG_WARNING, "111111");
 	cgusb_check_init();
 	applog(LOG_WARNING, "222222222");
+	if (opt_usb_select)
+	{
+		applog(LOG_WARNING, "7777777");
+	}else
+	{
+		applog(LOG_WARNING, "888888");
+	}
 	if (opt_usb_select && *opt_usb_select) {
+		applog(LOG_WARNING, "opt_usb_select%c",*opt_usb_select);
 		// Absolute device limit
 		if (*opt_usb_select == ':') {
 			total_limit = atoi(opt_usb_select+1);
