@@ -3047,9 +3047,9 @@ void usb_initialise(void)
 		drv_count[i].count = 0;
 		drv_count[i].limit = 999999;
 	}
-
+	applog(LOG_WARNING, "111111");
 	cgusb_check_init();
-
+	applog(LOG_WARNING, "222222222");
 	if (opt_usb_select && *opt_usb_select) {
 		// Absolute device limit
 		if (*opt_usb_select == ':') {
@@ -3131,6 +3131,7 @@ void usb_initialise(void)
 			free(fre);
 		}
 	}
+	applog(LOG_WARNING, "3333");
 }
 
 #ifndef WIN32
