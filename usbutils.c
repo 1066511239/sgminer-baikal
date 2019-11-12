@@ -3054,10 +3054,12 @@ void usb_initialise(void)
 		// Absolute device limit
 		if (*opt_usb_select == ':') {
 			total_limit = atoi(opt_usb_select+1);
+			applog(LOG_WARNING, "usb_total_limit%d",total_limit);
 			if (total_limit < 0)
 				quit(1, "Invalid --usb total limit");
 		// Comma list of bus:dev devices to match
 		} else if (isdigit(*opt_usb_select)) {
+			applog(LOG_WARNING, "isdigit=%c",*opt_usb_select);
 			fre = ptr = strdup(opt_usb_select);
 			do {
 				comma = strchr(ptr, ',');
