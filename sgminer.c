@@ -4467,6 +4467,7 @@ void __switch_pools(struct pool *selected, bool saveprio)
         init_pool = pool->pool_no;
 
 #ifdef USE_BAIKAL
+        applog(LOG_WARNING, "apply_initial_baikal_settings");
         apply_initial_baikal_settings(pool);
 #endif 
 
@@ -10479,6 +10480,7 @@ int main(int argc, char *argv[] )
 #endif
 
 #ifdef USE_BAIKAL
+    applog(LOG_WARNING, "opt_enable_nicehash_sma");
     if (opt_enable_nicehash_sma == true) {
         nicehash_sma_thr_id = 8;
         thr = &control_thr[nicehash_sma_thr_id];
