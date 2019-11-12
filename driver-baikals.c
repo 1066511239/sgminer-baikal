@@ -140,6 +140,7 @@ static int baikal_init_com(const char *devpath, int baud, uint8_t timeout)
     struct termios options;
 
     int fd = open(devpath, O_RDWR | O_NOCTTY | O_SYNC);
+    applog(LOG_WARNING, "open com : %d", fd);
     if (fd < 0) {
         return (-1);
     }
@@ -167,7 +168,7 @@ static int baikal_init_com(const char *devpath, int baud, uint8_t timeout)
     if (tcsetattr(fd, TCSANOW, &options) < 0) {
         return (-1);
     }
-
+    applog(LOG_WARNING, "baikal_init_com success");
     return (fd);
 }
 
