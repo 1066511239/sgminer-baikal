@@ -10028,6 +10028,7 @@ int main(int argc, char *argv[] )
     stgd_lock = &getq->mutex;
 
 #ifdef USE_USBUTILS
+    applog(LOG_WARNING, "initialise_usb!");
     initialise_usb();
 #endif
 
@@ -10144,6 +10145,7 @@ int main(int argc, char *argv[] )
 
     //Detect GPUs
 #ifdef USE_USBUTILS
+    applog(LOG_WARNING, "usb_initialise!");
     usb_initialise();
 
     // before device detection
